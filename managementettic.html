@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Management et TIC</title>
+
+    <link rel="icon" type="image/png" href="unnamed.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="unnamed.png" alt="CHU Hassan II Logo" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-bold">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="nousConnaitreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nous connaître
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="nousConnaitreDropdown">
+            <li><a class="dropdown-item" href="#organigramme"><i class="fas fa-sitemap me-2"></i>Organigramme</a></li>
+            <li><a class="dropdown-item" href="nos-valeurs.html"><i class="fas fa-heart me-2"></i>Nos valeurs</a></li>
+            <li><a class="dropdown-item" href="plan-acces.html"><i class="fas fa-map-marker-alt me-2"></i>Plan d'accès</a></li>
+            <li><a class="dropdown-item" href="#rapports-activites"><i class="fas fa-chart-line me-2"></i>Rapports d'activités</a></li>
+            <li><a class="dropdown-item" href="#reglement-interieur"><i class="fas fa-gavel me-2"></i>Règlement Intérieur</a></li>
+            <li><a class="dropdown-item" href="CHARTE-INFORMATIQUE-Version1.pdf" target="_blank"><i class="fas fa-laptop me-2"></i>Charte Informatique</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="patientVisiteurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Patient et visiteur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="patientVisiteurDropdown">
+            <li><a class="dropdown-item" href="#patient"><i class="fas fa-user-injured me-2"></i>Patient</a></li>
+            <li><a class="dropdown-item" href="#reglement"><i class="fas fa-file-contract me-2"></i>Règlement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="professionnelDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Professionnel
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="professionnelDropdown">
+            <li><a class="dropdown-item" href="recherche-details.html"><i class="fas fa-search me-2"></i>Recherche</a></li>
+            <li><a class="dropdown-item" href="#fonctionnaire"><i class="fas fa-user-tie me-2"></i>Fonctionnaire</a></li>
+            <li><a class="dropdown-item" href="#stage"><i class="fas fa-graduation-cap me-2"></i>Stage</a></li>
+            <li><a class="dropdown-item" href="#reglementation"><i class="fas fa-balance-scale me-2"></i>Réglementation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="fournisseurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fournisseur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="fournisseurDropdown">
+            <li><a class="dropdown-item" href="#appels-offres"><i class="fas fa-clipboard-list me-2"></i>Appels d'offres</a></li>
+            <li><a class="dropdown-item" href="#appel-concurrence"><i class="fas fa-handshake me-2"></i>Appel à la concurrence</a></li>
+            <li><a class="dropdown-item" href="#avis-ventes"><i class="fas fa-shopping-cart me-2"></i>Avis des ventes</a></li>
+            <li><a class="dropdown-item" href="#rapports-achevement"><i class="fas fa-file-alt me-2"></i>Rapports d'achèvement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="revue.html">Revue</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3" href="rendezvous.html">Rendez-vous</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="management-tic-hero">
+  <div class="management-tic-hero-overlay"></div>
+  <div class="container">
+    <div class="management-tic-hero-content">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white">Accueil</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Management et TIC</li>
+        </ol>
+      </nav>
+      <h1 class="display-3 fw-bold mb-4">Management et TIC</h1>
+      <p class="lead fs-4">Excellence dans la gestion hospitalière et l'innovation technologique</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRODUCTION SECTION ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Une approche moderne du management hospitalier</h2>
+        <p class="lead mb-4">
+          Le CHU Hassan II s'engage dans une démarche d'amélioration continue de ses pratiques managériales 
+          et de modernisation de son système d'information hospitalier.
+        </p>
+        <p>
+          Notre établissement adopte des méthodes de management innovantes et intègre les dernières 
+          technologies de l'information et de la communication pour optimiser la qualité des soins, 
+          améliorer l'efficience organisationnelle et renforcer la satisfaction des patients et du personnel.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="management-image-container">
+          <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               alt="Management hospitalier moderne" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AXES STRATEGIQUES ===== -->
+<section class="section-bg py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Nos Axes Stratégiques</h2>
+      <hr class="mx-auto" style="width:80px; border:2px solid #0d6efd;">
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="strategy-card h-100">
+          <div class="strategy-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h4>Management Participatif</h4>
+          <p>
+            Développement d'une culture managériale basée sur la participation, 
+            la délégation et la responsabilisation de l'ensemble des acteurs.
+          </p>
+          <ul class="strategy-list">
+            <li>Formation des cadres de santé</li>
+            <li>Comités de pilotage multidisciplinaires</li>
+            <li>Évaluation des performances</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="strategy-card h-100">
+          <div class="strategy-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4>Pilotage par les Indicateurs</h4>
+          <p>
+            Mise en place d'un système de pilotage basé sur des indicateurs 
+            de performance et de qualité pour une prise de décision éclairée.
+          </p>
+          <ul class="strategy-list">
+            <li>Tableaux de bord de gestion</li>
+            <li>Indicateurs de qualité des soins</li>
+            <li>Suivi de la satisfaction patient</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="strategy-card h-100">
+          <div class="strategy-icon">
+            <i class="fas fa-laptop-medical"></i>
+          </div>
+          <h4>Transformation Numérique</h4>
+          <p>
+            Modernisation des systèmes d'information pour améliorer 
+            l'efficacité opérationnelle et la coordination des soins.
+          </p>
+          <ul class="strategy-list">
+            <li>Dossier patient informatisé</li>
+            <li>Télémédecine et e-santé</li>
+            <li>Intelligence artificielle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEMES D'INFORMATION ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-lg-2">
+        <h2 class="fw-bold mb-4">Système d'Information Hospitalier (SIH)</h2>
+        <p class="lead mb-4">
+          Notre SIH intégré permet une gestion optimisée des flux d'information 
+          et une coordination efficace entre tous les services.
+        </p>
+        
+        <div class="tic-features">
+          <div class="tic-feature mb-3">
+            <i class="fas fa-database text-primary me-3"></i>
+            <div>
+              <h5 class="mb-1">Dossier Médical Partagé</h5>
+              <p class="mb-0 text-muted">Centralisation et partage sécurisé des données médicales</p>
+            </div>
+          </div>
+          
+          <div class="tic-feature mb-3">
+            <i class="fas fa-calendar-check text-primary me-3"></i>
+            <div>
+              <h5 class="mb-1">Gestion des Rendez-vous</h5>
+              <p class="mb-0 text-muted">Planification intelligente et optimisation des créneaux</p>
+            </div>
+          </div>
+          
+          <div class="tic-feature mb-3">
+            <i class="fas fa-pills text-primary me-3"></i>
+            <div>
+              <h5 class="mb-1">Circuit du Médicament</h5>
+              <p class="mb-0 text-muted">Traçabilité complète de la prescription à l'administration</p>
+            </div>
+          </div>
+          
+          <div class="tic-feature mb-3">
+            <i class="fas fa-chart-pie text-primary me-3"></i>
+            <div>
+              <h5 class="mb-1">Business Intelligence</h5>
+              <p class="mb-0 text-muted">Analyses prédictives et aide à la décision</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 order-lg-1">
+        <div class="tic-visual">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               alt="Système d'information hospitalier" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INNOVATIONS TECHNOLOGIQUES ===== -->
+<section class="innovations-section">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold text-white">Innovations Technologiques</h2>
+      <hr class="mx-auto" style="width:80px; border:2px solid #fff;">
+      <p class="lead text-white mt-3">Technologies de pointe au service de la santé</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="innovation-card">
+          <div class="innovation-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h4>Intelligence Artificielle</h4>
+          <p>Aide au diagnostic, analyse d'images médicales et optimisation des parcours de soins</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="innovation-card">
+          <div class="innovation-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h4>Télémédecine</h4>
+          <p>Consultations à distance, téléexpertise et télésurveillance des patients chroniques</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="innovation-card">
+          <div class="innovation-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Applications Mobiles</h4>
+          <p>Solutions mobiles pour patients et professionnels de santé</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="innovation-card">
+          <div class="innovation-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4>Cybersécurité</h4>
+          <p>Protection des données de santé et sécurisation des systèmes informatiques</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GOUVERNANCE ET QUALITE ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Gouvernance et Qualité</h2>
+        <p class="lead mb-4">
+          Notre démarche qualité s'appuie sur une gouvernance structurée 
+          et des processus d'amélioration continue.
+        </p>
+        
+        <div class="governance-items">
+          <div class="governance-item">
+            <div class="governance-number">01</div>
+            <div class="governance-content">
+              <h5>Comité de Direction</h5>
+              <p>Pilotage stratégique et allocation des ressources</p>
+            </div>
+          </div>
+          
+          <div class="governance-item">
+            <div class="governance-number">02</div>
+            <div class="governance-content">
+              <h5>Commission Médicale</h5>
+              <p>Coordination des activités médicales et paramédicales</p>
+            </div>
+          </div>
+          
+          <div class="governance-item">
+            <div class="governance-number">03</div>
+            <div class="governance-content">
+              <h5>Cellule Qualité</h5>
+              <p>Évaluation et amélioration continue des pratiques</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="quality-metrics">
+          <h3 class="fw-bold mb-4">Indicateurs Clés</h3>
+          
+          <div class="metric-item">
+            <div class="metric-label">Taux de satisfaction patients</div>
+            <div class="metric-bar">
+              <div class="metric-progress" style="width: 92%">92%</div>
+            </div>
+          </div>
+          
+          <div class="metric-item">
+            <div class="metric-label">Délai moyen de prise en charge</div>
+            <div class="metric-bar">
+              <div class="metric-progress" style="width: 85%">-15 min</div>
+            </div>
+          </div>
+          
+          <div class="metric-item">
+            <div class="metric-label">Dématérialisation des processus</div>
+            <div class="metric-bar">
+              <div class="metric-progress" style="width: 78%">78%</div>
+            </div>
+          </div>
+          
+          <div class="metric-item">
+            <div class="metric-label">Formation du personnel TIC</div>
+            <div class="metric-bar">
+              <div class="metric-progress" style="width: 88%">88%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETS EN COURS ===== -->
+<section class="section-bg py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">Projets en Cours</h2>
+      <hr class="mx-auto" style="width:80px; border:2px solid #0d6efd;">
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-status status-progress">En cours</div>
+            <h4>Modernisation du SIH</h4>
+          </div>
+          <p class="project-description">
+            Mise à niveau complète de notre système d'information hospitalier 
+            avec intégration de nouvelles fonctionnalités IA.
+          </p>
+          <div class="project-timeline">
+            <span class="timeline-label">Échéance :</span>
+            <span class="timeline-date">Décembre 2025</span>
+          </div>
+          <div class="project-progress-bar">
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+          <span class="progress-text">65% terminé</span>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-status status-planning">Planification</div>
+            <h4>Centre de Données</h4>
+          </div>
+          <p class="project-description">
+            Construction d'un nouveau centre de données sécurisé pour héberger 
+            nos systèmes critiques et assurer la continuité de service.
+          </p>
+          <div class="project-timeline">
+            <span class="timeline-label">Échéance :</span>
+            <span class="timeline-date">Mars 2026</span>
+          </div>
+          <div class="project-progress-bar">
+            <div class="progress-fill" style="width: 25%"></div>
+          </div>
+          <span class="progress-text">25% terminé</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="bg-primary text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold mb-3">Besoin d'informations sur nos solutions TIC ?</h2>
+        <p class="lead mb-0">
+          Notre équipe informatique et management est à votre disposition pour répondre à vos questions.
+        </p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="mailto:informatique@chu-hassan2.ma" class="btn btn-light btn-lg">
+          <i class="fas fa-envelope me-2"></i>
+          Nous contacter
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="custom-footer">
+  <div class="container text-center">
+    <small>© 2025 Centre Hospitalier Universitaire Hassan II.</small>
+  </div>
+</footer>
+
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'fr', includedLanguages: 'fr,en,es,ar'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+/* Management et TIC Hero Section */
+.management-tic-hero {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(0, 123, 143, 0.9)), 
+              url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.management-tic-hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.management-tic-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+}
+
+/* Strategy Cards */
+.strategy-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-top: 4px solid #0d6efd;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+}
+
+.strategy-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #0d6efd, #007bff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.strategy-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.strategy-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.strategy-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.strategy-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* TIC Features */
+.tic-feature {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.tic-feature:hover {
+  background: #f8f9fa;
+}
+
+.tic-feature i {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Innovations Section */
+.innovations-section {
+  background: linear-gradient(135deg, #0d6efd, #007bff);
+  padding: 5rem 0;
+  color: white;
+}
+
+.innovation-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.innovation-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.innovation-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.innovation-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Governance Items */
+.governance-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.governance-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.governance-number {
+  width: 60px;
+  height: 60px;
+  background: #0d6efd;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-right: 1.5rem;
+}
+
+/* Quality Metrics */
+.quality-metrics {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.metric-item {
+  margin-bottom: 1.5rem;
+}
+
+.metric-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.metric-bar {
+  background: #eee;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-progress {
+  background: linear-gradient(45deg, #0d6efd, #007bff);
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Project Cards */
+.project-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.project-status {
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-progress {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-planning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.project-timeline {
+  margin: 1rem 0;
+  color: #666;
+}
+
+.timeline-label {
+  font-weight: 600;
+}
+
+.timeline-date {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.project-progress-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin: 1rem 0 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #0d6efd, #007bff);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Management Image Container */
+.management-image-container {
+  position: relative;
+}
+
+.management-image-container::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(45deg, #0d6efd, #007bff);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* TIC Visual */
+.tic-visual {
+  position: relative;
+}
+
+.tic-visual::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(45deg, #0d6efd, #007bff);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .management-tic-hero {
+    height: 50vh;
+  }
+  
+  .management-tic-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .strategy-card,
+  .innovation-card,
+  .project-card {
+    margin-bottom: 2rem;
+  }
+  
+  .governance-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .governance-number {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .management-tic-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .innovations-section {
+    padding: 3rem 0;
+  }
+  
+  .strategy-icon,
+  .innovation-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .strategy-icon i,
+  .innovation-icon i {
+    font-size: 1.5rem;
+  }
+}

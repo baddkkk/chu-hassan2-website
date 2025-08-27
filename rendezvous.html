@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prendre Rendez-vous - CHU Hassan II</title>
+
+    <link rel="icon" type="image/png" href="unnamed.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .error-message {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .footer-blue {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .appointment-details {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <!-- Tu peux réutiliser ta navbar existante ici -->
+  </header>
+
+  <!-- Page Title -->
+  <section class="py-5 text-center bg-light">
+    <div class="container">
+      <h1>Prendre Rendez-vous</h1>
+      <p class="lead">Planifiez votre consultation au CHU Hassan II rapidement et simplement.</p>
+    </div>
+  </section>
+
+  <!-- Appointment Form -->
+  <section class="py-5">
+    <div class="container">
+      <form id="rendezvousForm" class="p-4 border rounded bg-white shadow-sm">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Nom complet *</label>
+            <input type="text" id="clientName" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Date de naissance</label>
+            <input type="date" id="birthDate" class="form-control">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Email *</label>
+            <input type="email" id="clientEmail" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Téléphone *</label>
+            <input type="tel" id="clientPhone" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Service médical *</label>
+          <select id="serviceId" class="form-select" required>
+            <option value="">Chargement des services...</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Médecin souhaité</label>
+          <select id="doctorPreference" class="form-select">
+            <option value="">Sélectionner un médecin...</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Date souhaitée *</label>
+            <input type="date" id="appointmentDate" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Heure souhaitée *</label>
+            <select id="appointmentTime" class="form-select" required>
+              <option value="">Choisir un créneau...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Motif de la consultation</label>
+          <textarea id="notes" class="form-control" rows="3" placeholder="Décrivez brièvement le motif de votre consultation"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Fichiers médicaux (optionnel)</label>
+          <input type="file" class="form-control" accept=".pdf,.jpg,.png,.doc,.docx">
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-primary w-100">
+          <span id="submitText">Prendre Rendez-vous</span>
+          <span id="loadingText" style="display: none;">En cours...</span>
+        </button>
+      </form>
+
+      <!-- Messages -->
+      <div id="successMsg" class="success-message" style="display: none;"></div>
+      <div id="errorMsg" class="error-message" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-blue">
+    <p>© 2025 Centre Hospitalier Universitaire Hassan II.</p>
+  </footer>
+
+<script>
+// Initialize Supabase
+// REPLACE THESE WITH YOUR ACTUAL SUPABASE CREDENTIALS
+const SUPABASE_URL = 'https://nhusmwaujtwkyjbpuymg.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5odXNtd2F1anR3a3lqYnB1eW1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYxNjA3NTQsImV4cCI6MjA3MTczNjc1NH0.uDvqjHDK0wASiYtmOfrkxQ1NH0lb1rdIKcvV504X0KY';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// PHP Email Script URL - Replace with your server path
+const EMAIL_SCRIPT_URL = 'send_email.php';
+
+const form = document.getElementById('rendezvousForm');
+const successMsg = document.getElementById('successMsg');
+const errorMsg = document.getElementById('errorMsg');
+const submitBtn = document.getElementById('submitBtn');
+const submitText = document.getElementById('submitText');
+const loadingText = document.getElementById('loadingText');
+
+// Load services on page load
+document.addEventListener('DOMContentLoaded', async function() {
+  await loadServices();
+  setMinDate();
+});
+
+// Set minimum date to today
+function setMinDate() {
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('appointmentDate').min = today;
+}
+
+// Load services from database
+async function loadServices() {
+  try {
+    const { data: services, error } = await supabase
+      .from('services')
+      .select('*')
+      .order('name');
+
+    if (error) throw error;
+
+    const serviceSelect = document.getElementById('serviceId');
+    serviceSelect.innerHTML = '<option value="">Sélectionner un service...</option>';
+    
+    services.forEach(service => {
+      const option = document.createElement('option');
+      option.value = service.id;
+      option.textContent = service.name;
+      serviceSelect.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Erreur lors du chargement des services:', error);
+  }
+}
+
+// Load doctors based on selected service
+document.getElementById('serviceId').addEventListener('change', async function() {
+  const serviceId = this.value;
+  const doctorSelect = document.getElementById('doctorPreference');
+  
+  doctorSelect.innerHTML = '<option value="">Chargement des médecins...</option>';
+  
+  if (!serviceId) {
+    doctorSelect.innerHTML = '<option value="">Sélectionner un médecin...</option>';
+    return;
+  }
+
+  try {
+    const { data: doctors, error } = await supabase
+      .from('doctors')
+      .select('*')
+      .eq('service_id', serviceId)
+      .order('name');
+
+    if (error) throw error;
+
+    doctorSelect.innerHTML = '<option value="">Sélectionner un médecin...</option>';
+    
+    doctors.forEach(doctor => {
+      const option = document.createElement('option');
+      option.value = doctor.id;
+      option.textContent = doctor.name;
+      doctorSelect.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Erreur lors du chargement des médecins:', error);
+    doctorSelect.innerHTML = '<option value="">Erreur de chargement</option>';
+  }
+});
+
+// Load available time slots based on selected date
+document.getElementById('appointmentDate').addEventListener('change', function() {
+  loadTimeSlots();
+});
+
+function loadTimeSlots() {
+  // For now, we'll use static time slots
+  // You can enhance this to check database availability
+  const timeSlots = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00'];
+  const timeSelect = document.getElementById('appointmentTime');
+  
+  timeSelect.innerHTML = '<option value="">Choisir un créneau...</option>';
+  
+  timeSlots.forEach(time => {
+    const option = document.createElement('option');
+    option.value = time;
+    option.textContent = time;
+    timeSelect.appendChild(option);
+  });
+}
+
+// Generate appointment number
+function generateAppointmentNumber() {
+  const date = new Date();
+  const year = date.getFullYear().toString().substr(-2);
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  return `RDV${year}${month}${random}`;
+}
+
+// Show loading state
+function showLoading() {
+  submitBtn.disabled = true;
+  submitBtn.classList.add('loading');
+  submitText.style.display = 'none';
+  loadingText.style.display = 'inline';
+}
+
+// Hide loading state
+function hideLoading() {
+  submitBtn.disabled = false;
+  submitBtn.classList.remove('loading');
+  submitText.style.display = 'inline';
+  loadingText.style.display = 'none';
+}
+
+// Form submission
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  showLoading();
+  
+  try {
+    const appointmentData = {
+      appointment_number: generateAppointmentNumber(),
+      client_name: document.getElementById('clientName').value,
+      client_email: document.getElementById('clientEmail').value,
+      client_phone: document.getElementById('clientPhone').value,
+      birth_date: document.getElementById('birthDate').value || null,
+      service_id: parseInt(document.getElementById('serviceId').value),
+      doctor_id: document.getElementById('doctorPreference').value ? parseInt(document.getElementById('doctorPreference').value) : null,
+      appointment_date: document.getElementById('appointmentDate').value,
+      appointment_time: document.getElementById('appointmentTime').value,
+      notes: document.getElementById('notes').value || null,
+      status: 'pending'
+    };
+
+    // Insert appointment into database
+    const { data, error } = await supabase
+      .from('appointments')
+      .insert([appointmentData])
+      .select(`
+        *,
+        services(name),
+        doctors(name)
+      `);
+
+    if (error) throw error;
+
+    const appointment = data[0];
+    const serviceName = appointment.services?.name || 'Service non spécifié';
+    const doctorName = appointment.doctors?.name || 'Médecin non spécifié';
+
+    // Send email confirmation using PHP script
+    try {
+      const emailData = {
+        client_email: appointment.client_email,
+        client_name: appointment.client_name,
+        appointment_number: appointment.appointment_number,
+        service_name: serviceName,
+        doctor_name: doctorName,
+        appointment_date: appointment.appointment_date,
+        appointment_time: appointment.appointment_time,
+        notes: appointment.notes
+      };
+
+      const emailResponse = await fetch(EMAIL_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData)
+      });
+
+      const emailResult = await emailResponse.json();
+      
+      if (emailResult.success) {
+        console.log('Email sent successfully');
+      } else {
+        console.error('Email error:', emailResult.error);
+        // Continue even if email fails - don't break the appointment creation
+      }
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
+      // Continue even if email fails
+    }
+
+    successMsg.innerHTML = `
+      <strong>Rendez-vous confirmé !</strong><br>
+      <div class="appointment-details mt-2">
+        <strong>Patient:</strong> ${appointment.client_name}<br>
+        <strong>Service:</strong> ${serviceName}<br>
+        <strong>Médecin:</strong> ${doctorName}<br>
+        <strong>Date:</strong> ${new Date(appointment.appointment_date).toLocaleDateString('fr-FR')}<br>
+        <strong>Heure:</strong> ${appointment.appointment_time}<br>
+        <strong>Numéro de RDV:</strong> <span class="badge bg-primary">${appointment.appointment_number}</span>
+      </div>
+      <small class="text-muted">
+        Veuillez noter votre numéro de rendez-vous pour toute correspondance future. 
+        Un email de confirmation va être envoyé à ${appointment.client_email}.
+      </small>
+    `;
+    
+    successMsg.style.display = 'block';
+    errorMsg.style.display = 'none';
+    form.reset();
+    
+    // Reset dropdowns
+    document.getElementById('serviceId').innerHTML = '<option value="">Chargement des services...</option>';
+    document.getElementById('doctorPreference').innerHTML = '<option value="">Sélectionner un médecin...</option>';
+    document.getElementById('appointmentTime').innerHTML = '<option value="">Choisir un créneau...</option>';
+    
+    // Reload services
+    await loadServices();
+    
+  } catch (error) {
+    console.error('Erreur lors de la création du rendez-vous:', error);
+    errorMsg.innerHTML = `Erreur lors de la création du rendez-vous: ${error.message}`;
+    errorMsg.style.display = 'block';
+    successMsg.style.display = 'none';
+  } finally {
+    hideLoading();
+  }
+});
+</script>
+
+</body>
+</html>

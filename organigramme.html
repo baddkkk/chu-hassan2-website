@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organigramme - CHU Hassan II</title>
+
+    <link rel="icon" type="image/png" href="unnamed.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Global Styles */
+    body {
+      font-family: "Open Sans", Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      padding: 15px 0;
+      background: #fff !important;
+    }
+
+    .navbar-brand img {
+      height: 100px;
+    }
+
+    .navbar .nav-link {
+      color: #444;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+      color: #0d6efd;
+    }
+
+    .navbar .btn {
+      font-weight: 600;
+      padding: 8px 16px;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, #0d6efd, #0a58ca);
+      color: white;
+      padding: 60px 0 40px;
+      margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* Navigation Tabs */
+    .org-nav {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .org-nav .nav-link {
+      padding: 15px 20px;
+      font-weight: 600;
+      color: #444;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .org-nav .nav-link:hover,
+    .org-nav .nav-link.active {
+      color: #0d6efd;
+      border-bottom-color: #0d6efd;
+      background-color: #f8f9fa;
+    }
+
+    /* Content Section */
+    .content-section {
+      display: none;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .content-section.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .org-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background-color: #f0f4f8;
+      /* The following display/centering props were for text placeholders.
+         They won't affect images negatively, so we keep them to preserve your code style. */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .custom-footer {
+      background: #ffffff;
+      border-top: 2px solid #007b8f;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    .custom-footer small {
+      color: #555;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER / NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="unnamed.png" alt="CHU Hassan II Logo" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-bold">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="nousConnaitreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nous connaître
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="nousConnaitreDropdown">
+            <li><a class="dropdown-item" href="organigramme.html"><i class="fas fa-sitemap me-2"></i>Organigramme</a></li>
+            <li><a class="dropdown-item" href="nos-valeurs.html"><i class="fas fa-heart me-2"></i>Nos valeurs</a></li>
+            <li><a class="dropdown-item" href="plan-acces.html"><i class="fas fa-map-marker-alt me-2"></i>Plan d'accès</a></li>
+            <li><a class="dropdown-item" href="#rapports-activites"><i class="fas fa-chart-line me-2"></i>Rapports d'activités</a></li>
+            <li><a class="dropdown-item" href="#reglement-interieur"><i class="fas fa-gavel me-2"></i>Règlement Intérieur</a></li>
+            <li><a class="dropdown-item" href="CHARTE-INFORMATIQUE-Version1.pdf" target="_blank"><i class="fas fa-laptop me-2"></i>Charte Informatique</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="patientVisiteurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Patient et visiteur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="patientVisiteurDropdown">
+            <li><a class="dropdown-item" href="#patient"><i class="fas fa-user-injured me-2"></i>Patient</a></li>
+            <li><a class="dropdown-item" href="#reglement"><i class="fas fa-file-contract me-2"></i>Règlement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="professionnelDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Professionnel
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="professionnelDropdown">
+            <li><a class="dropdown-item" href="recherche-details.html"><i class="fas fa-search me-2"></i>Recherche</a></li>
+            <li><a class="dropdown-item" href="#fonctionnaire"><i class="fas fa-user-tie me-2"></i>Fonctionnaire</a></li>
+            <li><a class="dropdown-item" href="#stage"><i class="fas fa-graduation-cap me-2"></i>Stage</a></li>
+            <li><a class="dropdown-item" href="#reglementation"><i class="fas fa-balance-scale me-2"></i>Réglementation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="fournisseurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fournisseur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="fournisseurDropdown">
+            <li><a class="dropdown-item" href="#appels-offres"><i class="fas fa-clipboard-list me-2"></i>Appels d'offres</a></li>
+            <li><a class="dropdown-item" href="#appel-concurrence"><i class="fas fa-handshake me-2"></i>Appel à la concurrence</a></li>
+            <li><a class="dropdown-item" href="#avis-ventes"><i class="fas fa-shopping-cart me-2"></i>Avis des ventes</a></li>
+            <li><a class="dropdown-item" href="#rapports-achevement"><i class="fas fa-file-alt me-2"></i>Rapports d'achèvement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="revue.html">Revue</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3" href="rendezvous.html">Rendez-vous</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="container text-center">
+    <h1><i class="fas fa-sitemap me-3"></i>Organigramme du CHU Hassan II</h1>
+    <p class="lead">Découvrez la structure organisationnelle de notre centre hospitalier universitaire</p>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+  <!-- Navigation Tabs -->
+  <ul class="nav nav-pills nav-justified flex-column flex-md-row org-nav mb-4" id="orgTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="direction-tab" data-bs-toggle="tab" data-bs-target="#direction" type="button" role="tab" aria-controls="direction" aria-selected="true">
+        <i class="fas fa-building me-2"></i>Direction Générale
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hopital1-tab" data-bs-toggle="tab" data-bs-target="#hopital1" type="button" role="tab" aria-controls="hopital1" aria-selected="false">
+        <i class="fas fa-hospital me-2"></i>Hôpital des Spécialités
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hopital2-tab" data-bs-toggle="tab" data-bs-target="#hopital2" type="button" role="tab" aria-controls="hopital2" aria-selected="false">
+        <i class="fas fa-baby me-2"></i>Hôpital Mère-Enfant
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hopital3-tab" data-bs-toggle="tab" data-bs-target="#hopital3" type="button" role="tab" aria-controls="hopital3" aria-selected="false">
+        <i class="fas fa-medkit me-2"></i>Hôpital d'Oncologie
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hopital4-tab" data-bs-toggle="tab" data-bs-target="#hopital4" type="button" role="tab" aria-controls="hopital4" aria-selected="false">
+        <i class="fas fa-user-md me-2"></i>Hôpital Omar Drissi
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="hopital5-tab" data-bs-toggle="tab" data-bs-target="#hopital5" type="button" role="tab" aria-controls="hopital5" aria-selected="false">
+        <i class="fas fa-heartbeat me-2"></i>Hôpital Ibn Al Hassan
+      </button>
+    </li>
+  </ul>
+
+  <!-- Content Sections -->
+  <div class="tab-content" id="orgTabContent">
+    <!-- Direction Générale -->
+    <div class="tab-pane fade show active" id="direction" role="tabpanel" aria-labelledby="direction-tab">
+      <div class="content-section active">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-1-1157x1536.jpg" alt="Direction Générale" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Direction Générale</h2>
+            <p>La Direction Générale du CHU Hassan II assure la coordination et la supervision de l'ensemble des activités médicales, administratives et logistiques de l'établissement.</p>
+            <p><strong>Missions principales :</strong></p>
+            <ul>
+              <li>Définition de la stratégie et des orientations générales</li>
+              <li>Coordination entre les différents hôpitaux et services</li>
+              <li>Gestion des ressources humaines, financières et matérielles</li>
+              <li>Représentation institutionnelle du CHU</li>
+              <li>Développement des partenariats nationaux et internationaux</li>
+            </ul>
+            <p><strong>Directeur Général :</strong> Pr. Ahmed Bennis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hôpital des Spécialités -->
+    <div class="tab-pane fade" id="hopital1" role="tabpanel" aria-labelledby="hopital1-tab">
+      <div class="content-section">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-3.jpg" alt="Hôpital des Spécialités" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Hôpital des Spécialités</h2>
+            <p>L'Hôpital des Spécialités est dédié aux soins spécialisés et aux consultations externes dans diverses disciplines médicales et chirurgicales.</p>
+            <p><strong>Services principaux :</strong></p>
+            <ul>
+              <li>Cardiologie</li>
+              <li>Neurologie</li>
+              <li>Dermatologie</li>
+              <li>Ophtalmologie</li>
+              <li>ORL</li>
+              <li>Médecine interne</li>
+            </ul>
+            <p><strong>Directeur :</strong> Dr. Karima El Amrani</p>
+            <p><strong>Capacité :</strong> 250 lits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hôpital Mère-Enfant -->
+    <div class="tab-pane fade" id="hopital2" role="tabpanel" aria-labelledby="hopital2-tab">
+      <div class="content-section">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-4.jpg" alt="Hôpital Mère-Enfant" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Hôpital Mère-Enfant</h2>
+            <p>L'Hôpital Mère-Enfant offre des soins complets dédiés à la santé de la femme, de la mère et de l'enfant, de la naissance à l'adolescence.</p>
+            <p><strong>Services principaux :</strong></p>
+            <ul>
+              <li>Maternité et obstétrique</li>
+              <li>Néonatologie et réanimation néonatale</li>
+              <li>Pédiatrie générale et spécialisée</li>
+              <li>Gynécologie</li>
+              <li>Planning familial</li>
+            </ul>
+            <p><strong>Directrice :</strong> Dr. Fatima Zahra Moussaif</p>
+            <p><strong>Capacité :</strong> 180 lits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hôpital d'Oncologie -->
+    <div class="tab-pane fade" id="hopital3" role="tabpanel" aria-labelledby="hopital3-tab">
+      <div class="content-section">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-5.jpg" alt="Hôpital d'Oncologie" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Hôpital d'Oncologie</h2>
+            <p>L'Hôpital d'Oncologie est un centre de référence pour le diagnostic, le traitement et le suivi des patients atteints de cancer.</p>
+            <p><strong>Services principaux :</strong></p>
+            <ul>
+              <li>Oncologie médicale</li>
+              <li>Radiothérapie</li>
+              <li>Chirurgie oncologique</li>
+              <li>Médecine nucléaire</li>
+              <li>Soins palliatifs</li>
+              <li>Psycho-oncologie</li>
+            </ul>
+            <p><strong>Directeur :</strong> Pr. Hassan El Fakir</p>
+            <p><strong>Capacité :</strong> 120 lits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hôpital Omar Drissi -->
+    <div class="tab-pane fade" id="hopital4" role="tabpanel" aria-labelledby="hopital4-tab">
+      <div class="content-section">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-6.jpg" alt="Hôpital Omar Drissi" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Hôpital Omar Drissi</h2>
+            <p>L'Hôpital Omar Drissi est spécialisé dans les soins de médecine interne, de chirurgie générale et d'urgences médico-chirurgicales.</p>
+            <p><strong>Services principaux :</strong></p>
+            <ul>
+              <li>Médecine interne</li>
+              <li>Chirurgie générale et digestive</li>
+              <li>Urgences médico-chirurgicales</li>
+              <li>Soins intensifs</li>
+              <li>Imagerie médicale</li>
+            </ul>
+            <p><strong>Directeur :</strong> Dr. Mohamed Tahiri</p>
+            <p><strong>Capacité :</strong> 300 lits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hôpital Ibn Al Hassan -->
+    <div class="tab-pane fade" id="hopital5" role="tabpanel" aria-labelledby="hopital5-tab">
+      <div class="content-section">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- PLACE YOUR IMAGE HERE -->
+            <img src="Organigramme-CHU-2021-7.jpg" alt="Hôpital Ibn Al Hassan" class="org-image" loading="lazy">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Hôpital Ibn Al Hassan</h2>
+            <p>L'Hôpital Ibn Al Hassan est un établissement de soins aigus proposant une large gamme de services médicaux et chirurgicaux.</p>
+            <p><strong>Services principaux :</strong></p>
+            <ul>
+              <li>Traumatologie</li>
+              <li>Orthopédie</li>
+              <li>Chirurgie viscérale</li>
+              <li>Urologie</li>
+              <li>Anesthésie-réanimation</li>
+              <li>Laboratoires d'analyses médicales</li>
+            </ul>
+            <p><strong>Directeur :</strong> Dr. Samira Belabbes</p>
+            <p><strong>Capacité :</strong> 280 lits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="custom-footer">
+  <div class="container text-center">
+    <small>© 2025 Centre Hospitalier Universitaire Hassan II.</small>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Activer le premier tab par défaut
+  document.addEventListener('DOMContentLoaded', function() {
+    // Activer le premier onglet
+    const firstTabEl = document.querySelector('#orgTabs button:nth-child(1)');
+    const firstTab = new bootstrap.Tab(firstTabEl);
+    firstTab.show();
+    
+    // Gérer le changement d'onglet
+    const triggerTabList = [].slice.call(document.querySelectorAll('#orgTabs button'));
+    triggerTabList.forEach(function (triggerEl) {
+      triggerEl.addEventListener('click', function (event) {
+        event.preventDefault();
+        const tabTrigger = new bootstrap.Tab(this);
+        tabTrigger.show();
+        
+        // Afficher le contenu correspondant
+        const target = this.getAttribute('data-bs-target');
+        document.querySelectorAll('.content-section').forEach(function(section) {
+          section.classList.remove('active');
+        });
+        document.querySelector(target + ' .content-section').classList.add('active');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

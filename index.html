@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHU Hassan II</title>
+
+    <link rel="icon" type="image/png" href="unnamed.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="unnamed.png" alt="CHU Hassan II Logo" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-bold">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="nousConnaitreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nous connaître
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="nousConnaitreDropdown">
+            <li><a class="dropdown-item" href="organigramme.html"><i class="fas fa-sitemap me-2"></i>Organigramme</a></li>
+            <li><a class="dropdown-item" href="nos-valeurs.html"><i class="fas fa-heart me-2"></i>Nos valeurs</a></li>
+            <li><a class="dropdown-item" href="plan-acces.html"><i class="fas fa-map-marker-alt me-2"></i>Plan d'accès</a></li>
+            <li><a class="dropdown-item" href="CHARTE-INFORMATIQUE-Version1.pdf" target="_blank"><i class="fas fa-laptop me-2"></i>Charte Informatique</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="patientVisiteurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Patient et visiteur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="patientVisiteurDropdown">
+            <li><a class="dropdown-item" href="#patient"><i class="fas fa-user-injured me-2"></i>Patient</a></li>
+            <li><a class="dropdown-item" href="#reglement"><i class="fas fa-file-contract me-2"></i>Règlement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="professionnelDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Professionnel
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="professionnelDropdown">
+            <li><a class="dropdown-item" href="recherche-details.html"><i class="fas fa-search me-2"></i>Recherche</a></li>
+            <li><a class="dropdown-item" href="#fonctionnaire"><i class="fas fa-user-tie me-2"></i>Fonctionnaire</a></li>
+            <li><a class="dropdown-item" href="#stage"><i class="fas fa-graduation-cap me-2"></i>Stage</a></li>
+            <li><a class="dropdown-item" href="#reglementation"><i class="fas fa-balance-scale me-2"></i>Réglementation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="fournisseurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fournisseur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="fournisseurDropdown">
+            <li><a class="dropdown-item" href="#appels-offres"><i class="fas fa-clipboard-list me-2"></i>Appels d'offres</a></li>
+            <li><a class="dropdown-item" href="#appel-concurrence"><i class="fas fa-handshake me-2"></i>Appel à la concurrence</a></li>
+            <li><a class="dropdown-item" href="#avis-ventes"><i class="fas fa-shopping-cart me-2"></i>Avis des ventes</a></li>
+            <li><a class="dropdown-item" href="#rapports-achevement"><i class="fas fa-file-alt me-2"></i>Rapports d'achèvement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="revue.html">Revue</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3 w-100 w-lg-auto" href="rendezvous.html">Rendez-vous</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ======= CHU Introduction Modern Slider ======= -->
+<section id="chu-intro" class="chu-slider">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide" style="background-image: url('unnamed2.jpg');">
+        <div class="slide-caption">
+          <h1 class="display-4">CENTRE HOSPITALIER<br>UNIVERSITAIRE HASSAN II</h1>
+          <p class="lead">Un établissement de référence au service de la Santé</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide" style="background-image: url('unnamed1.jpg');">
+        <div class="slide-caption">
+          <h2>IRC</h2>
+          <p>Un institut au service de la recherche contre le Cancer</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide" style="background-image: url('unnamed3.jpg');">
+        <div class="slide-caption">
+          <h2>Maison d'enfant</h2>
+          <p>Un foyer au service des enfants cancéreux</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide" style="background-image: url('domi-0001(4).jpg');">
+        <div class="slide-caption">
+          <h2>Maison de vie</h2>
+          <p>Un foyer au service des malades cancéreux</p>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide" style="background-image: url('unnamed4.jpg');">
+        <div class="slide-caption">
+          <h2>Association tous pour les Urgences</h2>
+          <p>Un espace au service des familles des malades des urgences</p>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="swiper-slide" style="background-image: url('a754ac3a6447a13d2c0245a5204089ae.jpg');">
+        <div class="slide-caption">
+          <h2>Centre d'addictologie</h2>
+          <p>Un centre au service de lute contre la dépendance</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Init Script -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "fade", // fade transition (modern look)
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+
+<!-- ===== LATEST NEWS ===== -->
+<section class="news-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Dernières Actualités</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https___cloudfront-eu-central-1.images.arcpublishing.com_le360_2QWJTKKR6ZF3PO6DWUXBB5CF4Q.jpg" class="card-img-top" alt="Actualité 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Ouverture d'une nouvelle aile d'urgence</h5>
+                        <p class="card-text">Le CHU Hassan II a inauguré une nouvelle aile pour améliorer les services d'urgence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="UNITÉ_CARDIOLOGIE_AMBULATOIRE_Timone_1©AP-HM.jpg" class="card-img-top" alt="Actualité 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Ouverture d'une nouvelle unité de cardiologie</h5>
+                        <p class="card-text">Le CHU Hassan II inaugure une unité moderne de cardiologie pour améliorer la prise en charge des patients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="couveuse-bebe-premature.jpg" class="card-img-top" alt="Actualité 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Campagne de sensibilisation à la santé maternelle</h5>
+                        <p class="card-text">Lancement d'une campagne de sensibilisation et de suivi prénatal pour accompagner les futures mamans tout au long de leur grossesse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RECHERCHE ET INNOVATION ===== -->
+<section id="recherche" class="recherche-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <img src="chercheur_2_les formations qui préparent au doctorat (mise en avant).jpg.jpg" alt="Recherche et Innovation" class="img-fluid rounded shadow-sm">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-3">Recherche et Innovation</h2>
+        <p class="lead">
+          Nous disposons d’une base de données bibliographique regroupant l’ensemble de la production scientifique du <strong>CHU Hassan II</strong>.
+          Cette plateforme permet aux chercheurs, médecins et étudiants d’accéder facilement aux publications, projets et études innovantes menés au sein de notre établissement.
+        </p>
+        <a href="recherche-details.html" class="btn btn-primary mt-3">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SERVICES / OFFRES DE SOINS ===== -->
+<section id="services" class="services section-bg py-5">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold fs-4 fs-md-2">NOS OFFRES DE SOINS</h2>
+<p class="lead fs-6 fs-md-5">Ensemble pour une santé de qualité</p>
+
+      <hr class="mx-auto" style="width:80px; border:2px solid #007b8f;">
+    </div>
+
+    <div class="row g-4">
+      <!-- URGENCES -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="Urgences-CHU.jpg" class="img-fluid mb-3 rounded" alt="Urgences">
+          <h5 class="fw-bold text-primary">URGENCES</h5>
+        </div>
+      </div>
+      <!-- SOINS INTENSIFS -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="soins-intensifs.jpg" class="img-fluid mb-3 rounded" alt="Soins Intensifs">
+          <h5 class="fw-bold text-primary">SOINS INTENSIFS</h5>
+        </div>
+      </div>
+      <!-- REANIMATION -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="réanimation_Fotor.jpg" class="img-fluid mb-3 rounded" alt="Réanimation">
+          <h5 class="fw-bold text-primary">RÉANIMATION</h5>
+        </div>
+      </div>
+      <!-- ONCOLOGIE -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="images-11.jpg" class="img-fluid mb-3 rounded" alt="Oncologie">
+          <h5 class="fw-bold text-primary">ONCOLOGIE</h5>
+        </div>
+      </div>
+      <!-- CHIRURGIE -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="chirurgie-2_Fotor.jpg" class="img-fluid mb-3 rounded" alt="Chirurgie">
+          <h5 class="fw-bold text-primary">CHIRURGIE</h5>
+        </div>
+      </div>
+      <!-- MEDECINE -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="IMG_9717-ss_Fotor.jpg" class="img-fluid mb-3 rounded" alt="Médecine">
+          <h5 class="fw-bold text-primary">MÉDECINE</h5>
+        </div>
+      </div>
+      <!-- BIOLOGIE -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="laboratoire-min_Fotor.jpg" class="img-fluid mb-3 rounded" alt="Biologie">
+          <h5 class="fw-bold text-primary">BIOLOGIE</h5>
+        </div>
+      </div>
+      <!-- MÉDICOTECHNIQUES -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-item shadow-sm p-3 bg-white rounded">
+          <img src="image5_Fotor.jpg" class="img-fluid mb-3 rounded" alt="Médicotechniques">
+          <h5 class="fw-bold text-primary">MÉDICOTECHNIQUES</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ACTIVITÉS DE RÉFÉRENCE ===== -->
+<section class="activites-reference">
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+  
+  <div class="container">
+    <div class="content-wrapper">
+      <h2>Activités de Référence</h2>
+      <p>
+        Le plateau technique et l'expérience de nos équipes nous permettent de
+        procurer des soins de grande qualité dans plusieurs disciplines.
+      </p>
+      <a href="activités.html" class="btn-modern">
+        <i class="fas fa-arrow-right"></i>
+        En savoir plus 
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Localisation précise ====== -->
+<section id="localisation" class="py-5">
+  <div class="container">
+    <div class="section-title text-center mb-4">
+      <h2 class="fw-bold">📍 Localisation</h2>
+      <p>Découvrez notre emplacement exact sur Google Maps</p>
+    </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13362.483325843657!2d-4.9630494!3d34.0039905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9f8c63788692a9%3A0x293c9cfcec0853ad!2sCentre%20Hospitalier%20Universitaire%20Hassan%20II%2C%20F%C3%A8s%2C%20Morocco!5e0!3m2!1sfr!2sma!4v0000000000000!5m2!1sfr!2sma"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="custom-hero">
+  <div class="custom-hero-overlay"></div>
+  <div class="custom-hero-content">
+    <h1>Management et TIC</h1>
+    <p>Les pratiques managériales et les techniques de communication<br>
+       adoptées par notre établissement</p>
+    <a href="managementettic.html" class="custom-btn">En savoir plus...</a>
+  </div>
+</div>
+
+
+
+
+<!-- ===== NOS PARTENAIRES ===== -->
+<section id="partenaires" class="partenaires-section py-5">
+  <div class="container">
+    
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">NOS PARTENAIRES</h2>
+      <hr class="mx-auto" style="width:80px; border:2px solid #0d6efd;">
+      <p class="lead text-muted mt-3">Ensemble pour une santé de qualité</p>
+    </div>
+
+    <!-- Partners Grid -->
+    <div class="row g-4 align-items-center justify-content-center mb-5">
+      
+      <!-- Partner 1 - Ministère de la Santé -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="image2.png" 
+                 alt="Ministère de la Santé" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">Ministère de la Santé</h6>
+        </div>
+      </div>
+
+      <!-- Partner 2 - CNOPS -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="24.png" 
+                 alt="CNOPS" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">CNOPS</h6>
+        </div>
+      </div>
+
+      <!-- Partner 3 - IRC -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="irc.png" 
+                 alt="Institut de Recherche sur le Cancer" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">Institut Recherche Cancer</h6>
+        </div>
+      </div>
+
+      <!-- Partner 4 - ANAPEC -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="22.png" 
+                 alt="ANAPEC" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">ANAPEC</h6>
+        </div>
+      </div>
+
+      <!-- Partner 5 - Fondation -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="image3.png" 
+                 alt="Fondation Lalla Salma" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">Fondation Lalla Salma</h6>
+        </div>
+      </div>
+
+      <!-- Partner 6 - CHU Rabat -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="image5.png" 
+                 alt="CHU Rabat" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">CHU Ibn Rochd</h6>
+        </div>
+      </div>
+
+      <!-- Partner 7 - Centre Ibn Sina -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="image6.png" 
+                 alt="Centre Ibn Sina" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">Centre Ibn Sina</h6>
+        </div>
+      </div>
+
+      <!-- Partner 8 - CHU Mohammed VI -->
+      <div class="col-lg-2 col-md-3 col-4">
+        <div class="partner-item text-center">
+          <div class="partner-logo">
+            <img src="image7.png" 
+                 alt="CHU Mohammed VI" class="img-fluid">
+          </div>
+          <h6 class="partner-name mt-2">CHU Mohammed VI</h6>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Button -->
+<div class="text-center">
+  <a href="partenaires.html" class="btn btn-primary btn-lg px-4 py-3">
+    <i class="fas fa-handshake me-2"></i>
+    Voir tous nos partenaires
+  </a>
+</div>
+
+</section>
+
+
+
+
+<!-- ===== CONTACT ===== -->
+<section class="bg-primary text-white py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Contactez-nous</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <p><strong>Adresse:</strong> Centre Hospitalier Hrazem, BP:1835 Atlas, Fès, Avenue Hassan II, Fes 30050</p>
+        <p><strong>Téléphone:</strong> +212 5 35 61 90 53</p>
+        <p><strong>Email:</strong> consult@chu-fes.ma</p>
+      </div>
+      <div class="col-lg-6">
+        <form id="contactForm" class="bg-white p-4 rounded shadow-sm">
+  <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Votre nom" required>
+  <input type="email" id="email" name="email" class="form-control mb-3" placeholder="Votre email" required>
+  <textarea id="message" name="message" rows="4" class="form-control mb-3" placeholder="Votre message" required></textarea>
+  <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+</form>
+<script>
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent page reload
+
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/contact', { // change to your backend URL
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Message envoyé avec succès !');
+        form.reset();
+      } else {
+        alert('Erreur, veuillez réessayer.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Erreur réseau, veuillez réessayer.');
+    }
+  });
+</script>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="custom-footer">
+  <div class="container text-center">
+    <small>© 2025 Centre Hospitalier Universitaire Hassan II.</small>
+  </div>
+</footer>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'fr', includedLanguages: 'fr,en,es,ar'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
